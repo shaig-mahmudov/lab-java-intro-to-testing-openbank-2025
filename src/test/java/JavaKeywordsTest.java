@@ -23,6 +23,16 @@ public class JavaKeywordsTest {
     }
 
     @Test
+    public void givenNull_whenChecked_thenReturnsFalse() {
+        assertFalse(checker.containsJavaKeyword(null));
+    }
+
+    @Test
+    public void givenCapitalizedKeyword_whenChecked_thenReturnsFalse() {
+        assertFalse(checker.containsJavaKeyword("Give me a Break"));
+    }
+
+    @Test
     public void givenEmptyString_whenChecked_thenReturnsFalse() {
         assertFalse(checker.containsJavaKeyword(""));
     }

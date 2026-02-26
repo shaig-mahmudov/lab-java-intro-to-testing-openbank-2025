@@ -1,13 +1,7 @@
-import java.util.ArrayList;
+import java.util.stream.IntStream;
 
 public class IntegerMethods {
-    public int[] allOddIntegerFrom1ToN(int n){
-        ArrayList<Integer> oddNumbers = new ArrayList<>();
-        for (int i = 1; i <= n; i++){
-            if (i % 2 != 0){
-                oddNumbers.add(i);
-            }
-        }
-        return oddNumbers.stream().mapToInt(Integer::intValue).toArray();
+    public int[] allOddIntegerFrom1ToN(int n) {
+        return IntStream.rangeClosed(1, n).filter(i -> i % 2 != 0).toArray();
     }
 }
